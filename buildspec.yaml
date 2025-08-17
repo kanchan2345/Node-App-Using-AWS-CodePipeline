@@ -5,17 +5,16 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-      - echo "Installing Dependencies"
+      - echo "Installing dependencies"
       - npm install
   build:
     commands:
-      - echo "Building application"
-      - npm run build
+      - echo "No build step for Node.js app, skipping..."
   post_build:
     commands:
-      - echo "Build Completed on 'date'"
+      - echo "Packaging application"
       - mkdir -p deploy
-      - cp -r dist/* deploy/
+      - cp -r * deploy/
       - cp appspec.yaml deploy/
       - cp -r scripts/ deploy/scripts/
 artifacts:
