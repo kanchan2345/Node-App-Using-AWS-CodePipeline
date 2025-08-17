@@ -20,6 +20,6 @@ phases:
       - cp -r scripts/ deploy/scripts/
 artifacts:
   files:
-    - deploy/**/*
+    - '**/*'
+  base-directory: dist
   discard-paths: no
-  
